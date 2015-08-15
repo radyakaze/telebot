@@ -18,13 +18,6 @@ class TeleBot {
   protected $token = '';
 
   /**
-   * BOT Username
-   *
-   * @var string
-   */
-  protected $botname = '';
-
-  /**
    * commands
    *
    * @var array
