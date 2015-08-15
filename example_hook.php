@@ -7,7 +7,7 @@ require dirname(__FILE__).'/TeleBot.php';
 
 $tg = new TeleBot($token, $botname);
 
-// Simple ommand
+// Simple command
 $tg->cmd('hello', 'Hello world!');
 
 // Simple command with parameter
