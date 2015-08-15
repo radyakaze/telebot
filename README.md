@@ -4,7 +4,7 @@ A Simple Telegram Bot based on the official [Telegram Bot API](https://core.tele
 
 ## Requirements
 * PHP 5.4+
-* Telegram Bot API Access Token - Talk to [@BotFather](http://telegram.me/BotFather) and generate one [Documentation](https://core.telegram.org/bots#botfather).
+* Telegram Bot API Access Token - Talk to [@BotFather](http://telegram.me/BotFather) and generate one. [Documentation](https://core.telegram.org/bots#botfather).
 
 ## Usage
 You must set [WebHook](https://core.telegram.org/bots/api#setwebhook)
@@ -25,7 +25,7 @@ And open your set.php via browser
 After create hook.php and put:
 ```php
 <?php
-token = 'BOT TOKEN';
+$token = 'BOT TOKEN';
 $botname = 'BOT USERNAME';
 
 require dirname(__FILE__).'/TeleBot.php';
