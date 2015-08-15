@@ -14,7 +14,7 @@ $tg->cmd('weather', function($location){
   } else {
     $ch = curl_init();
     $curlConfig = [
-      CURLOPT_URL => 'http://api.openweathermap.org/data/2.5/weather?q=' . urldecode($location) . '&units=metric',
+      CURLOPT_URL => 'http://api.openweathermap.org/data/2.5/weather?q=' . urlencode($location) . '&units=metric',
       CURLOPT_RETURNTRANSFER => true
     ];
     curl_setopt_array($ch, $curlConfig);
