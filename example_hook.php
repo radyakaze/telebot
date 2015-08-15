@@ -23,4 +23,4 @@ $tg->cmd('echo', function($text){
 $tg->cmd('/upload', $tg->sendPhoto('image/path.jpg'));
 */
 
-$f->run();
+$tg->run();

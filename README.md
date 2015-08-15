@@ -44,7 +44,7 @@ $tg->cmd('echo', function($text){
   }
  });
  
-$f->run();
+$tg->run();
 ```
 
 #### Send Photo
