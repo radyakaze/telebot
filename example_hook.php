@@ -1,16 +1,15 @@
 <?php
-
 $token = 'BOT TOKEN';
 $botname = 'BOT USERNAME';
 
-require dirname(__FILE__).'/TeleBot.php';
+require __DIR__.'/vendor/autoload.php';
 
-$tg = new TeleBot($token, $botname);
+$tg = new TeleBot\Api($token, $botname);
 
-// Simple command
+// Simple command : /hello => Hello world!
 $tg->cmd('hello', 'Hello world!');
 
-// Simple command with parameter
+// Simple command with parameter : /echo telebot => telebot
 $tg->cmd('echo', function($text){
   if (isset($text)) {
     return $text;
@@ -18,9 +17,5 @@ $tg->cmd('echo', function($text){
     return '/echo <text>';
   }
  });
-
-/*
-$tg->cmd('/upload', $tg->sendPhoto('image/path.jpg'));
-*/
-
+ 
 $tg->run();

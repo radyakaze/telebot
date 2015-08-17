@@ -3,9 +3,9 @@
 $token = 'BOT TOKEN';
 $botname = 'BOT USERNAME';
 
-require dirname(__FILE__).'/TeleBot.php';
+require __DIR__.'/vendor/autoload.php';
 
-$tg = new TeleBot($token, $botname);
+$tg = new TeleBot\Api($token, $botname);
 
 // Weather command, /weather city
 $tg->cmd('weather', function($location){

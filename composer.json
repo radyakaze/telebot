@@ -1,0 +1,26 @@
+{
+  "name": "radya/telebot",
+  "description": "TeleBot - Simple PHP Telegram Bot",
+  "keywords": ["telegram", "bot"],
+  "homepage": "http://github.com/radyakaze/telebot",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Radya",
+      "email": "radya.38@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "TeleBot\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "config": {
+      "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

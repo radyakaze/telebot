@@ -3,8 +3,18 @@
 A Simple Telegram Bot based on the official [Telegram Bot API](https://core.telegram.org/bots/api)
 
 ## Requirements
-* PHP 5.4+
+* PHP 5.3+
 * Telegram Bot API Access Token - Talk to [@BotFather](http://telegram.me/BotFather) and generate one. [Documentation](https://core.telegram.org/bots#botfather).
+
+### Installation
+
+#### Install Through Composer
+
+You can either add the package directly by firing this command
+
+```cli
+$ composer require radyakaze/telebot
+```
 
 ## Usage
 You must set [WebHook](https://core.telegram.org/bots/api#setwebhook)
@@ -15,9 +25,9 @@ Create set.php and put:
 $token = 'BOT TOKEN';
 $botname = 'BOT USERNAME';
 
-require dirname(__FILE__).'/TeleBot.php';
+require __DIR__.'/vendor/autoload.php';
 
-$tg = new TeleBot($token, $botname);
+$tg = new TeleBot\Api($token, $botname);
 $tg->setWebhook('https://domain/path_to_hook.php');
 ```
 And open your set.php via browser
@@ -25,12 +35,9 @@ And open your set.php via browser
 After create hook.php and put:
 ```php
 <?php
-$token = 'BOT TOKEN';
-$botname = 'BOT USERNAME';
+require __DIR__.'/vendor/autoload.php';
 
-require dirname(__FILE__).'/TeleBot.php';
-
-$tg = new TeleBot($token, $botname);
+$tg = new TeleBot\Api($token, $botname);
 
 // Simple command : /hello => Hello world!
 $tg->cmd('hello', 'Hello world!');
@@ -49,14 +56,38 @@ $tg->run();
 
 #### Send Photo
 ```php
-$tg->cmd('/upload', $tg->sendPhoto('image/path.jpg'));
+$tg->cmd('/upload', array(
+  'type' => 'photo',
+  'send' => 'path/to/photo.jpg'
+);
+// OR
+$tg->cmd('/upload2', function($text) {
+  return array(
+    'type' => 'photo',
+    'send' => 'path/to/photo.jpg'
+  )
+});
 ```
 
-##### Avaible Method
-* sendPhoto($path,$caption);
-* sendVideo($path, $caption);
-* sendDocument($path);
-* sendAudio($path);
+#### Avaible Type
+* text, optional: web_preview (default: true) 
+* photo, optional: caption
+* video, optional: caption
+* document
+* audio
+* location, required: send as array($latitude, $longitude)
+
+#### Location example
+```php
+<?php
+$tg->cmd('/myloc', function($text) {
+  return array(
+    'location' => 'photo',
+    'send' => array(-7.61, 109.51) // Gombong, Kebumen, Indonesia, you can integrate with google maps api
+  )
+});
+```
+
 
 ## License
 TeleBot is under the MIT License
