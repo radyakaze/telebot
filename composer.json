@@ -1,7 +1,7 @@
 {
   "name": "radyakaze/telebot",
   "description": "TeleBot - Simple PHP Telegram Bot",
-  "keywords": ["telegram", "bot"],
+  "keywords": ["telegram", "bot", "api"],
   "homepage": "http://github.com/radyakaze/telebot",
   "license": "MIT",
   "authors": [
