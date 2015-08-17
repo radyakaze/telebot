@@ -59,12 +59,12 @@ $tg->run();
 
 #### Send Photo
 ```php
-$tg->cmd('/upload', array(
+$tg->cmd('upload', array(
   'type' => 'photo',
   'send' => 'path/to/photo.jpg'
 );
 // OR
-$tg->cmd('/upload2', function($text) {
+$tg->cmd('upload2', function($text) {
   return array(
     'type' => 'photo',
     'send' => 'path/to/photo.jpg'
@@ -75,7 +75,7 @@ $tg->cmd('/upload2', function($text) {
 ### Send Location
 ```php
 <?php
-$tg->cmd('/myloc', function($text) {
+$tg->cmd('myloc', function($text) {
   return array(
     'type' => 'location',
     'send' => array(-7.61, 109.51) // Gombong, Kebumen, Indonesia, you can integrate with google maps api
