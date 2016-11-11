@@ -1,5 +1,5 @@
 # Deprecated
-This package is deprecated, please use [PHPTelebot][https://github.com/radyakaze/phptelebot) instead of. It's newer and better.
+This package is deprecated, please use [PHPTelebot](https://github.com/radyakaze/phptelebot) instead of. It's newer and better.
 # TeleBot - PHP Telegram Bot
 
 A Simple Telegram Bot based on the official [Telegram Bot API](https://core.telegram.org/bots/api)
